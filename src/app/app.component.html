@@ -21,14 +21,13 @@
         (click)="filter = 'done'">Done</button>
     </div>
     <ul class="list-group">
-      <!-- <p>{{tasks.length}}
+      <p>{{tasks.length}}
 
         <span *ngIf="tasks.length ===1; else elseBlock">task</span>
         <ng-template #elseBlock>tasks</ng-template>
-      </p> -->
+      </p>
       <li class="list-group-item" *ngFor="let task of tasks">
-        <!-- <app-task (remove)="remove(task)" [task]="task"></app-task> -->
-        {{task.description}}
+        <app-task (remove)="remove(task)" [task]="task"></app-task>
       </li>
     </ul>
   </div>

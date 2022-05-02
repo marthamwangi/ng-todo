@@ -17,7 +17,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   title = 'todo';
   filter: 'all' | 'active' | 'done' = 'all';
-  allTasks = this.taskService.getTasks();
 
   // get tasks() {
   //   if (this.filter === 'all') {
@@ -32,9 +31,9 @@ export class AppComponent implements OnInit, OnDestroy {
   //     done: false
   //   })
   // }
-  // remove(task: { description: string; done: boolean; }) {
-  //   this.allTasks.splice(this.allTasks.indexOf(task), 1)
-  // }
+  remove(task: { description: string; done: boolean; }) {
+    this.tasks.splice(this.tasks.indexOf(task), 1)
+  }
   ngOnInit() {
     this.sub = this.taskService.getTasks().subscribe({
       next: tasks => {
