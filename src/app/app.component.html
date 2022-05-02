@@ -1,0 +1,36 @@
+<main>
+
+  <div class="col-lg-8 mx-auto p-3 py-md-5">
+    <header class="d-flex align-tasks-center pb-3 mb-5 border-bottom">
+      <span class="fs-4"><i class=""></i>My Todos</span>
+      <i class="bi bi-check2-circle" style="font-size: 2rem;"></i>
+    </header>
+
+    <!--
+    <div class="input-group mb-3">
+      <input type="text" placeholder="Add Task" #newTask (keyup.enter)="addTask(newTask.value);
+                                          newTask.value=''" class="form-control">
+      <button class='btn btn-primary btn-lg px-4' (click)="addTask(newTask.value)">Add</button>
+
+    </div> -->
+    <div class="wrapper">
+      <button class="btn btn-primary btn-lg px-4" [class.active]="filter == 'all'" (click)="filter = 'all'">All</button>
+      <button class="btn btn-primary btn-lg px-4" [class.active]="filter== 'active'"
+        (click)="filter = 'active'">Active</button>
+      <button class="btn btn-primary btn-lg px-4" [class.active]="filter== 'done'"
+        (click)="filter = 'done'">Done</button>
+    </div>
+    <ul class="list-group">
+      <!-- <p>{{tasks.length}}
+
+        <span *ngIf="tasks.length ===1; else elseBlock">task</span>
+        <ng-template #elseBlock>tasks</ng-template>
+      </p> -->
+      <li class="list-group-item" *ngFor="let task of tasks">
+        <!-- <app-task (remove)="remove(task)" [task]="task"></app-task> -->
+        {{task.description}}
+      </li>
+    </ul>
+  </div>
+
+  <main>

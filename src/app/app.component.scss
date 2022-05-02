@@ -1,0 +1,13 @@
+@import '../styles.scss';
+
+.wrapper {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.form-field {
+  width: 100%;
+}
