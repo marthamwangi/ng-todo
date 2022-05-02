@@ -18,19 +18,12 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'todo';
   filter: 'all' | 'active' | 'done' = 'all';
 
-  // get tasks() {
-  //   if (this.filter === 'all') {
-  //     return this.allTasks;
-  //   }
-  //   //filter(task => this.filter === 'done' ? task.done : !task.done)
-  //   return filter((task: Task) => this.filter === 'done' ? task.done : !task.done)
-  // }
-  // addTask(description: string) {
-  //   this.allTasks.unshift({
-  //     description,
-  //     done: false
-  //   })
-  // }
+  addTask(description: string) {
+    this.tasks.unshift({
+      description,
+      done: false
+    })
+  }
   remove(task: { description: string; done: boolean; }) {
     this.tasks.splice(this.tasks.indexOf(task), 1)
   }
