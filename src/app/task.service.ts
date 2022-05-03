@@ -31,6 +31,6 @@ export class TaskService {
       errorMessage = `Server returned code: ${err.status}, error message is ${err.message}`
     }
     console.log(errorMessage);
-    return throwError(errorMessage)
+    return throwError(() => new Error(errorMessage))
   }
 }

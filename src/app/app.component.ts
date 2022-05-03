@@ -17,7 +17,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
   title = 'todo';
   filter: 'all' | 'active' | 'done' = 'all';
-
   addTask(description: string) {
     this.tasks.unshift({
       description,
